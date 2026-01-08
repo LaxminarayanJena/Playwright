@@ -1,4 +1,4 @@
-const flag =true
+/* const flag =true
 if(!flag)
 {
     console.log("condiiton satisifed")
@@ -24,11 +24,17 @@ i++
 }
 while(i>10)
 
-    console.log(i)
+    console.log(i) */
 ///////////////////
 
 
-for( let k=0 ;k<10;k++)
-{
-    console.log(k)
-}
+// for( let k=0 ;k<10;k++)
+// {
+//     console.log(k)
+// }
+
+//from 1 to 10 give common multiple calues of 2 nd 5
+
+
+
+
