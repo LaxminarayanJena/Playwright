@@ -1,0 +1,6 @@
+
+tagname#id
+tagname.class
+[attribute]='value'
+
+[id*='password']
