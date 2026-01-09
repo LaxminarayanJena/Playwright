@@ -1,3 +1,4 @@
+const Person3 =require('./class.js')
 console.log("hellow world")
 //comments will not execute
 
@@ -40,5 +41,8 @@ const k= "playwright"
 k1="hello1"
 console.log(k1)
 
+
+let person3=new Person3("Timu","Joseph")
+ person3.fullName()
 
 
