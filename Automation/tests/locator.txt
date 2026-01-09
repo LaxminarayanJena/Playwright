@@ -1,6 +1,9 @@
 
-tagname#id
-tagname.class
-[attribute]='value'
+tagname#id               // ##signInBtn
+tagname.class           // .card-body
+[attribute]='value'    //  [id*='password']
 
 [id*='password']
+
+
+class ->child     //(".card-body a").nth(1)
