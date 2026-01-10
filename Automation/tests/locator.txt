@@ -1,9 +1,17 @@
 
 tagname#id               // ##signInBtn
-tagname.class           // .card-body
-[attribute]='value'    //  [id*='password']
+tagname.class            // .card-body
+[attribute]='value'      //  [id*='password']
+class ->child            //(".card-body a").nth(1)
 
-[id*='password']
 
 
-class ->child     //(".card-body a").nth(1)
+<select class="form-control" data-style="btn-info" fdprocessedid="bk6fii">
+
+[data-style='btn-info']
+select.form-control
+
+
+
+
+
