@@ -12,6 +12,11 @@ class ->child            //(".card-body a").nth(1)
 select.form-control
 
 
+<a href="https://rahulshettyacademy.com/documents-request" class="blinkingText" target="_blank">Free Access to
+		InterviewQues/ResumeAssistance/Material</a>
+
+        [href*='documents-request']
+
 
 
 
