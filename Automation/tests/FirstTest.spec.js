@@ -5,6 +5,8 @@ const { test, expect } = require('@playwright/test')
 
 //npx playwright test --headed
 
+//npx playwright test tests/EndToEnd.spec.js
+
 //shift + alt + f - formatting
 
 
@@ -82,15 +84,6 @@ test('UI CONTROL', async ({ browser }) => {
      await expect(documentLink).toHaveAttribute("class", 'blinkingText');
 
 
-
-
-
-
-
-
-
-
-
      //await await page.getByRole('button', { name: 'Sign In' }).click();
      //console.log(await cardTitles.first().textContent());
      //console.log(await  cardTitles.nth(1).textContent());
@@ -106,7 +99,7 @@ test('UI CONTROL', async ({ browser }) => {
 });
 
 
-test.only('CHILD TAB CONTROL', async ({ browser }) => {
+test('CHILD TAB CONTROL', async ({ browser }) => {
      const context = await browser.newContext();
      const page = await context.newPage();
      await page.goto("https://rahulshettyacademy.com/loginpagePractise/");

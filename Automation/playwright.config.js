@@ -10,9 +10,11 @@ export default defineConfig({
   },
   reporter :'html',
    use: {
-      browserName: 'chromium',
-     // browserName: 'webkit',
-     headless :false
+    browserName: 'chromium',
+    headless: false,
+    viewport: null,               
+    launchOptions: {
+      args: ['--start-maximized'] 
+    }
   },
 });
-

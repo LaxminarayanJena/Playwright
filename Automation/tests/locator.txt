@@ -3,6 +3,7 @@ tagname#id               // ##signInBtn
 tagname.class            // .card-body
 [attribute]='value'      //  [id*='password']
 class ->child            //(".card-body a").nth(1)
+ parent ->child          // .card-body b
 
 
 
@@ -16,6 +17,19 @@ select.form-control
 		InterviewQues/ResumeAssistance/Material</a>
 
         [href*='documents-request']
+
+<div class="button" routerlink="/dashboard/myorders">My Orders</div>
+.button[routerlink*='myorders']
+
+<button routerlink="/dashboard/myorders">My Orders</button>
+button[routerlink*='myorders']
+
+
+.user__name [type='text']
+
+parent name class is -user__name
+child is [type='text']
+
 
 
 
