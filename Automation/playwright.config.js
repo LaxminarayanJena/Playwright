@@ -1,5 +1,6 @@
 
 import { defineConfig, devices } from '@playwright/test';
+import { on } from 'events';
 
 export default defineConfig({
   testDir: './tests',
@@ -12,6 +13,9 @@ export default defineConfig({
    use: {
     browserName: 'chromium',
     headless: false,
+    screenshot : 'on',
+    //trace: 'on' ,
+      trace: 'retain-on-failure' ,
     viewport: null,               
     launchOptions: {
       args: ['--start-maximized'] 

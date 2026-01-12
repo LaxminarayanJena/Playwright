@@ -5,11 +5,10 @@ const { test, expect } = require('@playwright/test')
 //npx playwright test --headed
 //npx playwright test tests/EndToEnd.spec.js
 //npx playwright test --ui
+//npc playwright test --debugCLS
+//npx playwright codegen  (play and record)
 //shift + alt + f - formatting
 //shift + alt + a - multi comment
-
-
-
 
 
 
