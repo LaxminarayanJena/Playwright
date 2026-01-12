@@ -17,6 +17,7 @@ test('Browser Context Playwright test', async ({ browser }) => {
      //asynchronous- no gurantee in sequentially
      //await
      //chrome -plugin/cookies
+     //pass browser if u want to parametrise from config
      const context = await browser.newContext();
      const page = await context.newPage();
      await page.goto("https://practicetestautomation.com/practice-test-login/");
