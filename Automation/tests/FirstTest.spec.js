@@ -2,12 +2,13 @@ const { test, expect } = require('@playwright/test')
 
 //npm init playwright
 //npx playwright test
-
 //npx playwright test --headed
-
 //npx playwright test tests/EndToEnd.spec.js
-
+//npx playwright test --ui
 //shift + alt + f - formatting
+//shift + alt + a - multi comment
+
+
 
 
 
