@@ -18,17 +18,6 @@ test('New Locators', async ({ browser }) => {
 
       //CHAINING
       await page.locator("app-card").filter({ hasText: 'Nokia Edge' }).getByRole("button").click();
-
-
-
-
-
-
-
-
-
-
-
 });
 
 

@@ -16,7 +16,7 @@ test('Browser Context Playwright test', async ({ browser }) => {
      //asynchronous- no gurantee in sequentially
      //await
      //chrome -plugin/cookies
-     //pass browser if u want to parametrise from config
+     //pass browser(fixture) if u want to parametrise from config
      const context = await browser.newContext();
      const page = await context.newPage();
      await page.goto("https://practicetestautomation.com/practice-test-login/");
@@ -122,29 +122,28 @@ test('CHILD TAB CONTROL', async ({ browser }) => {
      const domain = arrayText[1].split(" ")[0]
      console.log(domain);
 
-      await page.getByRole('textbox', { name: 'Username:' }).fill(domain);
-      console.log(await page.locator("#username").inputValue());
-      await page.pause();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     await page.getByRole('textbox', { name: 'Username:' }).fill(domain);
+     console.log(await page.locator("#username").inputValue());
+  
 });
+
+test.only('Popup validations And FRAME Validations', async ({ page }) => {
+          await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+          //await page.goto("https://www.google.com/");
+         // await page.goBack();
+         // await page.goForward();
+          await  page.locator("#hide-textbox").click();
+          await  expect(page.locator("#displayed-text")).toBeHidden();
+          page.on('dialog', dialog => dialog.accept()); //Dialog handler should be registered before clicking
+          await page.locator("#confirmbtn").click();
+          await page.locator("#mousehover").hover();
+
+         const framesPage= page.frameLocator("#courses-iframe");
+         await framesPage.locator("li a[href*='lifetime-access']:visible").click();
+         console.log(await framesPage.locator(".text h2").textContent());
+
+
+     });
+
+
 
