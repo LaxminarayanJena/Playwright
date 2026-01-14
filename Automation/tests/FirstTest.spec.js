@@ -6,7 +6,16 @@ const { test, expect } = require('@playwright/test')
 //npx playwright test --headed
 //npx playwright test tests/EndToEnd.spec.js
 //npx playwright test --ui
-//npc playwright test --debugCLS
+//npc playwright test --debug CLS
+ /*  package.json for api debugging
+  "scripts": {
+ "test": "npx playwright test tests/API.spec.js"
+ },
+
+ //shift ctrl p -debug npm script
+
+ */
+//trace: 'on' , in config.js
 //npx playwright codegen  (play and record)
 //shift + alt + f - formatting
 //shift + alt + a - multi comment

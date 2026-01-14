@@ -32,6 +32,8 @@ button[routerlink*='myorders']
 parent name class is -user__name
 child is [type='text']
 
+button:has-text('View')
+
 
 
 
