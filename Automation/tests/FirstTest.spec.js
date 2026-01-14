@@ -1,5 +1,6 @@
 const { test, expect } = require('@playwright/test')
 
+//C:\PlayWright\Automation> run from project root
 //npm init playwright
 //npx playwright test
 //npx playwright test --headed
