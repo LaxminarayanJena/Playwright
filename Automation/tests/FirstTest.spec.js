@@ -7,14 +7,14 @@ const { test, expect } = require('@playwright/test')
 //npx playwright test tests/EndToEnd.spec.js
 //npx playwright test --ui
 //npc playwright test --debug CLS
- /*  package.json for api debugging
-  "scripts": {
- "test": "npx playwright test tests/API.spec.js"
- },
+/*  package.json for api debugging
+ "scripts": {
+"test": "npx playwright test tests/API.spec.js"
+},
 
- //shift ctrl p -debug npm script
+//shift ctrl p -debug npm script
 
- */
+*/
 //trace: 'on' , in config.js
 //npx playwright codegen  (play and record)
 //shift + alt + f - formatting
@@ -134,26 +134,39 @@ test('CHILD TAB CONTROL', async ({ browser }) => {
 
      await page.getByRole('textbox', { name: 'Username:' }).fill(domain);
      console.log(await page.locator("#username").inputValue());
-  
+
 });
 
-test.only('Popup validations And FRAME Validations', async ({ page }) => {
-          await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
-          //await page.goto("https://www.google.com/");
-         // await page.goBack();
-         // await page.goForward();
-          await  page.locator("#hide-textbox").click();
-          await  expect(page.locator("#displayed-text")).toBeHidden();
-          page.on('dialog', dialog => dialog.accept()); //Dialog handler should be registered before clicking
-          await page.locator("#confirmbtn").click();
-          await page.locator("#mousehover").hover();
+test('Popup validations And FRAME Validations', async ({ page }) => {
+     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+     //await page.goto("https://www.google.com/");
+     // await page.goBack();
+     // await page.goForward();
+     await page.locator("#hide-textbox").click();
+     await expect(page.locator("#displayed-text")).toBeHidden();
+     page.on('dialog', dialog => dialog.accept()); //Dialog handler should be registered before clicking
+     await page.locator("#confirmbtn").click();
+     await page.locator("#mousehover").hover();
 
-         const framesPage= page.frameLocator("#courses-iframe");
-         await framesPage.locator("li a[href*='lifetime-access']:visible").click();
-         console.log(await framesPage.locator(".text h2").textContent());
+     const framesPage = page.frameLocator("#courses-iframe");
+     await framesPage.locator("li a[href*='lifetime-access']:visible").click();
+     console.log(await framesPage.locator(".text h2").textContent());
 
 
-     });
+});
+
+
+test.only('Screenshot and partial screenshot', async ({ page }) => {
+     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+     await page.locator("#displayed-text").screenshot({path: 'partialscreenshot.png'});
+     await page.locator("#hide-textbox").click();
+     await expect(page.locator("#displayed-text")).toBeHidden();
+     await page.screenshot({path: 'screenshot.png'})
+     page.on('dialog', dialog => dialog.accept()); //Dialog handler should be registered before clicking
+     await page.locator("#confirmbtn").click();
+
+
+});
 
 
 
