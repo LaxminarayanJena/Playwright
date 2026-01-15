@@ -156,7 +156,7 @@ test('Popup validations And FRAME Validations', async ({ page }) => {
 });
 
 
-test.only('Screenshot and partial screenshot', async ({ page }) => {
+test('Screenshot and partial screenshot', async ({ page }) => {
      await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
      await page.locator("#displayed-text").screenshot({path: 'partialscreenshot.png'});
      await page.locator("#hide-textbox").click();
@@ -167,6 +167,14 @@ test.only('Screenshot and partial screenshot', async ({ page }) => {
 
 
 });
+
+
+test.only('visual', async({page})=>
+{
+ await page.goto("https://rahulshettyacademy.com/angularpractice/");
+ expect(await page.screenshot()).toMatchSnapshot('landing.png');
+ //Stored in tests/FirstTest.spec.js-snapshot folder
+})
 
 
 
