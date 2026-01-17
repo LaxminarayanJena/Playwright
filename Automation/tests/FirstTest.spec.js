@@ -1,8 +1,9 @@
-const { test, expect } = require('@playwright/test')
+const { test, expect } = require('@playwright/test');
+const { Console } = require('console');
 
-//C:\PlayWright\Automation> run from project root
+//C:\PlayWright\Automation> run from project root not from test folder
 //npm init playwright
-//npx playwright test
+//npx playwright test (run from project root-Automation not from test folder)
 //npx playwright test --headed
 //npx playwright test tests/EndToEnd.spec.js
 //npx playwright test --ui
@@ -11,6 +12,7 @@ const { test, expect } = require('@playwright/test')
  "scripts": {
 "test": "npx playwright test tests/API.spec.js"
 },
+//npm install
 
 //shift ctrl p -debug npm script
 
@@ -158,10 +160,10 @@ test('Popup validations And FRAME Validations', async ({ page }) => {
 
 test('Screenshot and partial screenshot', async ({ page }) => {
      await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
-     await page.locator("#displayed-text").screenshot({path: 'partialscreenshot.png'});
+     await page.locator("#displayed-text").screenshot({ path: 'partialscreenshot.png' });
      await page.locator("#hide-textbox").click();
      await expect(page.locator("#displayed-text")).toBeHidden();
-     await page.screenshot({path: 'screenshot.png'})
+     await page.screenshot({ path: 'screenshot.png' })
      page.on('dialog', dialog => dialog.accept()); //Dialog handler should be registered before clicking
      await page.locator("#confirmbtn").click();
 
@@ -169,12 +171,47 @@ test('Screenshot and partial screenshot', async ({ page }) => {
 });
 
 
-test.only('visual', async({page})=>
-{
- await page.goto("https://rahulshettyacademy.com/angularpractice/");
- expect(await page.screenshot()).toMatchSnapshot('landing.png');
- //Stored in tests/FirstTest.spec.js-snapshot folder
+test('visual', async ({ page }) => {
+     await page.goto("https://rahulshettyacademy.com/angularpractice/");
+     expect(await page.screenshot()).toMatchSnapshot('landing.png');
+     //Stored in tests/FirstTest.spec.js-snapshot folder
 })
+
+
+test.only('Upload and Download', async ({ page }) => {
+     await page.goto('https://rahulshettyacademy.com/upload-download-test/index.html');
+     const downloadDir = 'C:\\PlayWright\\Excel';
+     const path = require('path');
+     const fs = require('fs');
+     const ExcelUtil = require('../../Excel/ExcelUtil');
+     const UpdatedText="9678";
+
+     if (!fs.existsSync(downloadDir)) {
+          fs.mkdirSync(downloadDir, { recursive: true });
+     }
+     const [download] = await Promise.all([
+          page.waitForEvent('download'),
+          page.locator('#downloadButton').click()
+     ]);
+
+     const filePath = path.join(downloadDir, 'download.xlsx');
+     await download.saveAs(filePath);
+
+     console.log('File saved at:', filePath);
+     await ExcelUtil.updateCellByPosition(
+          filePath,
+          'Sheet1',
+          5,
+          4,
+          UpdatedText
+     );
+
+     await page.locator('#fileinput').setInputFiles(filePath);
+
+ const desiredRow = await page.getByRole('row').filter({ has: page.getByText("Banana") });
+  await expect(desiredRow.locator('#cell-4-undefined')).toContainText(UpdatedText);
+});
+
 
 
 
