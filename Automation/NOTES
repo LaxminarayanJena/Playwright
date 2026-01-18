@@ -1,0 +1,10 @@
+
+
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+
+npm install -g allure-commandline
+npx playwright test tests/Tag.spec.js --grep "@QA" --reporter=line,allure-playwright
+npx allure-commandline generate ./allure-results --clean
+npx allure-commandline open ./allure-report

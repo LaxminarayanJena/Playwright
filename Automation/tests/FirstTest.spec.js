@@ -15,6 +15,7 @@ const { Console } = require('console');
 
 //npx playwright test tests/EndToEnd.spec.js --config playwright.configCustom.js --project=chrome
 //npm install
+//npx playwright test tests/Tag.spec.js --grep "@QA"
 
 //shift ctrl p -debug npm script
 
