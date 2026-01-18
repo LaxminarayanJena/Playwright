@@ -7,11 +7,13 @@ const { Console } = require('console');
 //npx playwright test --headed
 //npx playwright test tests/EndToEnd.spec.js
 //npx playwright test --ui
-//npc playwright test --debug CLS
+//npx playwright test tests/FirstTest.spec.js --debug
 /*  package.json for api debugging
  "scripts": {
 "test": "npx playwright test tests/API.spec.js"
 },
+
+//npx playwright test tests/EndToEnd.spec.js --config playwright.configCustom.js --project=chrome
 //npm install
 
 //shift ctrl p -debug npm script
