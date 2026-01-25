@@ -1,0 +1,11 @@
+java -jar Jenkins.war
+admin
+ce577c3918e240919f2261d4966223db
+
+
+Choice Parameter-regression
+QA
+specific
+
+Name- Script
+Execute Windows batch command -npm run "%Script%"
