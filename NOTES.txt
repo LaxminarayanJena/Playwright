@@ -1,0 +1,8 @@
+npx cucumber-js
+
+
+
+World is Cucumber’s way of giving each scenario its own memory and context.
+
+this.page
+you are reading from the World instance of that scenario.

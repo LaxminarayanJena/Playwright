@@ -108,7 +108,7 @@ customtest('Client App login using custom test fixture', async ({ page, testData
   const productName = testDataForOrder.productName;
   const products = page.locator(".card-body");
   */
-    const { username, password, productName } = testDataForOrder;
+  const { username, password, productName } = testDataForOrder;
   const loginPage = poManager.getLoginPage();
   await loginPage.goTo();
   await loginPage.validLogin(username, password);
