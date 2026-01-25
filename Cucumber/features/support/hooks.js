@@ -1,4 +1,5 @@
-const { Before, After, setDefaultTimeout } = require('@cucumber/cucumber');
+const { Before,BeforeStep,After,AfterStep,Status,setDefaultTimeout} = require('@cucumber/cucumber');
+
 const { chromium } = require('@playwright/test');
 
 setDefaultTimeout(60 * 1000);
@@ -14,6 +15,19 @@ Before(async function () {
   });
 
   this.page = await this.context.newPage();
+});
+
+BeforeStep({ tags: '@correct' }, async function () {
+  console.log('BeforeStep running only for @correct scenarios');
+});
+
+AfterStep(async function ({ result }) {
+  if (result.status === Status.FAILED) {
+    const screenshot = await this.page.screenshot({
+      fullPage: true
+    });
+    await this.attach(screenshot, 'image/png');
+  }
 });
 
 After(async function () {

@@ -8,10 +8,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@cucumber/cucumber": "^12.6.0",
     "@playwright/test": "^1.58.0",
-    "@types/node": "^25.0.10"
-  },
-  "dependencies": {
-    "@cucumber/cucumber": "^12.6.0"
+    "@types/node": "^25.0.10",
+    "cucumber-html-reporter": "^7.2.0"
   }
 }

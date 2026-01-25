@@ -1,8 +1,19 @@
 npx cucumber-js
+npx cucumber-js --tags "@correct"
+
+npx cucumber-js --parallel 2
+npx cucumber-js --tags "@correct" --parallel 2
+
+npx cucumber-js --format html:reports/cucumber-report.html
+
+
+npx cucumber-js --retry 2 --format html:reports/cucumber-report.html
+npx cucumber-js --format json:reports/cucumber-report.json ; node generate-report.js
 
 
 
-World is Cucumber’s way of giving each scenario its own memory and context.
 
-this.page
+World is Cucumber’s way of giving each scenario its own memory and context.this.page
 you are reading from the World instance of that scenario.
+
+
