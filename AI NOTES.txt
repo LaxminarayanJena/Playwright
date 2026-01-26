@@ -1,0 +1,42 @@
+use gpt-40
+INSTALL GITHUB COPILOT
+SETTINGS- MCP- Copilot: Enable Agent Mode
+
+npx playwright init-agents --loop=vscode
+(generator,planner,healer)
+
+
+Add seed file 
+Explore the app and create test plan for website ""
+
+mcp.json in root of project your-project/
+ ├─ .vscode/
+ │   └─ mcp.json
+
+{
+  "name": "Model Context Protocol Server",
+  "version": "1.0.0",
+  "description": "Configuration file for the MCP server project.",
+  "servers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "type": "stdio"
+    }
+  }
+}
+
+
+Create playwright test
+
+Perform the below steps manually first in a browser to understand the flow and grab real locators, and then frame a Selenium test as per existing framework page object standards. Create that test file in the tests folder
+Test Steps:
+
+Navigate to:
+https://rahulshettyacademy.com/loginpagePractise/
+Enter username as "rahulshettyacademy" and password as "Learning@830$3mK2"
+Select checkbox
+Click on Sign In button
+Wait until page is navigated to:
+https://rahulshettyacademy.com/angularpractice/shop
+Verify if iPhone X product is present on the page.
