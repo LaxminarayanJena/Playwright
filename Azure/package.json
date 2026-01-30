@@ -1,0 +1,24 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "regression": "npx playwright test",
+    "QA": "npx playwright test tests/Tag.spec.js --grep @QA",
+    "specific": "npx playwright test tests/EndToEnd.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@azure/identity": "^4.13.0",
+    "@azure/playwright": "^1.1.1",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
+    "allure-playwright": "^3.4.5"
+  }
+}

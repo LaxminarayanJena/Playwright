@@ -1,0 +1,1 @@
+[{"uid":"625f932c63e2aca5","name":"@QA Page Playwright test","time":{"start":1768740467376,"stop":1768740469777,"duration":2401},"status":"passed","severity":"normal"},{"uid":"8f94759da74ad8e5","name":"@QA Browser Context Playwright test","time":{"start":1768740458047,"stop":1768740465989,"duration":7942},"status":"failed","severity":"normal"}]

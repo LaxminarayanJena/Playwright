@@ -11,9 +11,21 @@ npx cucumber-js --retry 2 --format html:reports/cucumber-report.html
 npx cucumber-js --format json:reports/cucumber-report.json ; node generate-report.js
 
 
-
+npx playwright test tests/EndToEnd.spec.js
 
 World is Cucumber’s way of giving each scenario its own memory and context.this.page
 you are reading from the World instance of that scenario.
 
+
+////
+
+
+azure
+npm init @azure/playwright@latest
+az login
+export PLAYWRIGHT_SERVICE_URL=wss://eastus.api.playwright.microsoft.com/playwrightworkspaces/9f459a91-7232-4248-aaa0-5118682ad7ea/browsers
+in storage-
+Click on "Add role assignment".
+Search for/Select "Storage Blob Data Contributor" role and click Next.
+reporter: [["html"], ["@azure/playwright/reporter"],]
 

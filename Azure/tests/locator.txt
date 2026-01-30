@@ -1,0 +1,40 @@
+
+tagname#id               // ##signInBtn
+tagname.class            // .card-body
+[attribute]='value'      //  [id*='password']
+class ->child            //(".card-body a").nth(1)
+ parent ->child          // .card-body b
+    id                     //#hide-textbox
+ <input id="hide-textbox" class="btn-style class2" value="Hide" onclick="hideElement()" type="submit" fdprocessedid="1hv9xb">
+
+
+
+<select class="form-control" data-style="btn-info" fdprocessedid="bk6fii">
+
+[data-style='btn-info']
+select.form-control
+
+
+<a href="https://rahulshettyacademy.com/documents-request" class="blinkingText" target="_blank">Free Access to
+		InterviewQues/ResumeAssistance/Material</a>
+
+        [href*='documents-request']
+
+<div class="button" routerlink="/dashboard/myorders">My Orders</div>
+.button[routerlink*='myorders']
+
+<button routerlink="/dashboard/myorders">My Orders</button>
+button[routerlink*='myorders']
+
+
+.user__name [type='text']
+
+parent name class is -user__name
+child is [type='text']
+
+button:has-text('View')
+
+
+
+
+
