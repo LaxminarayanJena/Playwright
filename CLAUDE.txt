@@ -1,0 +1,25 @@
+INSTALL PYTHON through exe
+INTALL UV
+
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+install claude desktop
+
+modify 
+C:\Users\jenan\AppData\Roaming\Claude
+claude_desktop_config
+
+
+
+
+
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
