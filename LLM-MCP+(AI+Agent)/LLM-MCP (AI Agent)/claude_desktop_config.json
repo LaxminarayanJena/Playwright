@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "mysql": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "C:/PlayWright/LLM-MCP+(AI+Agent)/LLM-MCP (AI Agent)/mysql_mcp_server-main",
+        "run",
+        "mysql_mcp_server"
+      ],
+      "env": {
+        "MYSQL_HOST": "127.0.0.1",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "root",
+        "MYSQL_PASSWORD": "root",
+        "MYSQL_DATABASE": "rahulshettyacademy"
+      }
+    }
+  },
+  "preferences": {
+    "coworkScheduledTasksEnabled": false,
+    "sidebarMode": "chat"
+  }
+}
