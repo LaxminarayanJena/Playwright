@@ -6,6 +6,14 @@
         "@playwright/mcp@latest"
       ]
     },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/PlayWright"
+      ]
+    },
     "mysql": {
       "command": "uv",
       "args": [
@@ -20,6 +28,28 @@
         "MYSQL_USER": "root",
         "MYSQL_PASSWORD": "root",
         "MYSQL_DATABASE": "rahulshettyacademy"
+      }
+    },
+   "excel-mcp-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@negokaz/excel-mcp-server",
+        "--key",
+        "8057b368-76b0-4966-a636-40b33610017e"
+      ]
+    },
+    "rest-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "dkmaker-mcp-rest-api"
+      ],
+      "env": {
+        "REST_BASE_URL": "https://rahulshettyacademy.com",
+        "HEADER_Accept": "application/json"
       }
     }
   },
