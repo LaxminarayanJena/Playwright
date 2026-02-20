@@ -12,4 +12,11 @@ test('two users chat', async ({ browser }) => {
   const page2 = await context2.newPage();
 
 });
-await pauses execution until the action completes.
+await pauses execution until the action completes. </br>
+
+Playwright Test already gives you some built-in fixtures like browser, context, and page
+
+Codegen means code generator. It’s a tool that records your actions in the browser and automatically generates Playwright test code for you.
+npx playwright codegen https://example.com
+
+npx playwright test --debug
