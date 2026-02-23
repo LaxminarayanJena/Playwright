@@ -20,3 +20,14 @@ Codegen means code generator. It’s a tool that records your actions in the bro
 npx playwright codegen https://example.com
 
 npx playwright test --debug
+
+
+I designed the JavaScript Cucumber framework using a layered approach so that tests stay maintainable and scalable.”
+
+“First, I created feature files where business scenarios are written in Gherkin format. Then I mapped those steps to step definition files written in JavaScript. Instead of putting all automation logic inside steps, I followed Page Object Model. All locators and reusable actions were kept inside page classes, and step definitions only called those methods.”
+
+“I structured the project with separate folders for features, step definitions, page objects, hooks, and utilities. Hooks were used for browser setup, teardown, and common configurations like screenshots on failure.”
+
+“For execution, the framework runs on Node.js with Cucumber as the test runner, and the browser interactions are handled using Selenium or Playwright. I also added reusable utilities for waits, config handling, and test data to avoid code duplication.”
+
+“The main goal while designing was readability, reusability, and easy debugging. So I kept feature files clean, step definitions lightweight, and business logic inside page objects.
