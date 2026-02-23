@@ -31,3 +31,17 @@ I designed the JavaScript Cucumber framework using a layered approach so that te
 “For execution, the framework runs on Node.js with Cucumber as the test runner, and the browser interactions are handled using Selenium or Playwright. I also added reusable utilities for waits, config handling, and test data to avoid code duplication.”
 
 “The main goal while designing was readability, reusability, and easy debugging. So I kept feature files clean, step definitions lightweight, and business logic inside page objects.
+
+
+console.log("Try programiz.pro");
+let s ="Thissssisinntteeerrrrvvviiieeeewwww";
+
+const map = new Map();
+
+for (const ch of s.toLowerCase()) {
+  map.set(ch, (map.get(ch) || 0) + 1);
+}
+
+for (const [ch, count] of map) {
+  if (count > 4) console.log(ch);
+}
